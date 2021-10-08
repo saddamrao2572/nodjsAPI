@@ -1,0 +1,113 @@
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <div class="form-group">
+      <button (click)="conectOmnivores()" class="btn btn-success btn-block">Connect With Omnivores</button>
+    </div>
+
+    
+
+    
+  </div>
+
+  
+</div>
+<div *ngIf="omni">
+      <h4>Location</h4>
+      <div *ngFor='let in of counter(omni.count) ;let i = index' >
+        <label><strong>Title:</strong></label> {{omni.concept_name}}<br/>
+        <label><strong>Name:</strong></label> {{omni.name}}<br/>
+        <label><strong>Owner:</strong></label> {{omni.owner}}<br/>
+        <label><strong>Status:</strong></label> {{omni.status}}<br/>
+		<br/>
+         <a class="badge badge-warning show" routerLink="/omni/categories/{{locationID}}">
+			View Caregories
+		 </a>
+      </div>
+     
+     
+    </div>
+	<div *ngIf="menuee">
+      <h4>Menu</h4>
+       <div *ngFor='let in of counter(menuee.count) ;let i = index' >
+        <label><strong>Category name:</strong></label> {{menuee._embedded.categories[i].name}}<br/>
+        <label><strong>Category Id:</strong></label> {{menuee._embedded.categories[i].id}}<br/>
+        <a class="badge badge-warning show" routerLink="/omni/menu/{{menuee._embedded.categories[i].id}}">
+        View Menu
+      </a>
+		<br/>
+        
+      </div>
+     
+     
+    </div>
+	
+	<div *ngIf="ticketss">
+      <h4>Tickets</h4>
+      <div>
+	  
+	    <div *ngFor='let in of counter(ticketss.count) ;let i = index' >
+		 <label><strong>Tickets Number:</strong> </label> {{ticketss._embedded.tickets[i].ticket_number}}<br/>
+		 <a class="badge badge-warning show" routerLink=" {{menuee}}">
+			View 
+		  </a>
+		 
+		</div>
+         
+      
+        
+      </div>
+     
+     
+    </div>
+	
+	<div *ngIf="addOn">
+      <h4>Addon</h4>
+      <div>
+	  
+	    <div *ngFor='let in of counter(addOn.count) ;let i = index' >
+		 <label><strong>Title:</strong> </label> test<br/>
+		 <a class="badge badge-warning show" routerLink=" {{menuee}}">
+			View 
+		  </a>
+		 
+		</div>
+         
+      
+        
+      </div>
+     
+     
+    </div>
+	
+	<div *ngIf="comboBox">
+      <h4>ComboBox</h4>
+      <div>
+	  
+	    <div *ngFor='let in of counter(comboBox.count) ;let i = index' >
+		 <label><strong>Title:</strong> </label> test<br/>
+		 <a class="badge badge-warning show" routerLink=" {{menuee}}">
+			View 
+		  </a>
+		 
+		</div>
+         
+      
+        
+      </div>
+     
+     
+    </div>
+	<style>
+	.badge {
+    display: inline-block;
+    padding: .35em .65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    color: #198754 !important;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+	</style>
